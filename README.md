@@ -1,64 +1,95 @@
-# Breast-Cancer-Detection-Deep-Learning
+# Breast Cancer Detection using Deep Learning
 
-This project utilizes deep learning to classify breast cancer images into benign or malignant categories.
+This project implements a deep learning model to classify breast cancer images as either benign or malignant. The model is built using Keras and TensorFlow, and a graphical user interface (GUI) is provided using Tkinter to make it easy to load images, train the model, and test the model on new images.
 
-**Data:**
+## Table of Contents
 
-The data is organized in the `./data` directory and consists of two subfolders:
+- [Installation](#installation)
+- [Usage](#usage)
+- [Model Architecture](#model-architecture)
+- [Training](#training)
+- [Testing](#testing)
+- [Visualization](#visualization)
+- [Dependencies](#dependencies)
+- [Acknowledgments](#acknowledgments)
 
-* `benign`: Contains images of benign breast tissue.
-* `malignant`: Contains images of malignant breast tissue.
+## Installation
 
-**Model:**
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/your-repo/breast-cancer-detection.git
+   cd breast-cancer-detection
+   ```
 
-The model used is a Convolutional Neural Network (CNN) with the following architecture:
+2. **Install the required dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-* **Convolutional Layers:** These layers extract features from the images.
-* **Max Pooling Layers:** These layers reduce the dimensionality of the data.
-* **Dropout Layers:** These layers prevent overfitting by randomly dropping neurons during training.
-* **Dense Layers:** These layers make the final classification decision.
+## Usage
 
-The model definition is implemented in the `larger_model` function within the script. 
+1. **Load Dataset:**
+   - Place the dataset images in the `./data/` folder.
+   - The dataset should be organized into two subfolders: `benign/` and `malignant/`, with each subfolder containing the respective images.
 
-**Training:**
+2. **Run the Script:**
+   - To start the graphical interface, run the following command:
+     ```bash
+     python breast_cancer_detection.py
+     ```
 
-The script performs the following steps during training:
+3. **Training:**
+   - Click on the "Start Training" button to train the model with the provided dataset. The model will be saved as `28april.h5`.
 
-1. **Loads images:** Images are loaded from the data folders and resized to a common size.
-2. **Preprocessing:** Images are normalized by dividing pixel values by 255.
-3. **One-Hot Encoding:** Labels (benign or malignant) are converted to one-hot encoded vectors.
-4. **Train-Test Split:** The data is split into training and testing sets for model evaluation.
-5. **Model Training:** The model is trained using the Adam optimizer and categorical cross-entropy loss function. Training progress is monitored with validation accuracy and loss.
+4. **Testing:**
+   - You can test the model on images from the dataset or on any random image using the provided GUI buttons.
 
-**Evaluation:**
+5. **Visualization:**
+   - The training and validation losses and accuracies can be visualized by clicking on the "See Loss and Accuracy plots" button.
 
-The script evaluates the model's performance on the test set and reports the final accuracy.
+## Model Architecture
 
-**Testing:**
+The model is a Convolutional Neural Network (CNN) with the following layers:
+- Conv2D layer with 32 filters and a kernel size of 3x3, followed by ReLU activation and max-pooling.
+- Another Conv2D layer with 32 filters and a kernel size of 3x3, followed by ReLU activation and max-pooling.
+- Conv2D layer with 64 filters and a kernel size of 3x3, followed by ReLU activation and max-pooling.
+- Dropout layers to prevent overfitting.
+- Dense layers with ReLU activation.
+- Output layer with a softmax activation function.
 
-The script demonstrates how to test the model on:
+The model is compiled using the Adam optimizer and categorical cross-entropy loss function.
 
-* **An image from the test set:** This provides a controlled evaluation of the model's performance on unseen data.
-* **A new image:** This allows you to test the model on any image you provide. 
+## Training
 
-**Visualization:**
+- The model is trained for a specified number of epochs (default is 500) with a batch size of 128.
+- The dataset is split into training (80%) and testing (20%) sets.
+- The input images are normalized from 0-255 to 0-1.
+- The labels are one-hot encoded.
 
-The script visualizes the training and validation loss and accuracy curves to assess the model's learning behavior.
+## Testing
 
-**Saving and Loading:**
+- The model can be tested on images from the test set or on any new image using the GUI.
+- The predicted class and accuracy are displayed for the tested image.
 
-The trained model is saved as `28april.h5`. You can reload the model using `model = load_model('28april.h5')`.
+## Visualization
 
-**Dependencies:**
+- The losses and accuracies during training can be visualized using matplotlib.
+- The GUI provides a convenient button to display these plots.
 
-The script requires the following Python libraries:
+## Dependencies
 
-* numpy
-* pydot (optional for visualization)
-* graphviz (optional for visualization)
-* matplotlib.pyplot
-* h5py
-* keras
-* opencv-python (cv2)
-* sklearn
+- Python 3.x
+- TensorFlow / Keras
+- OpenCV
+- Tkinter
+- Matplotlib
+- Numpy
+- Scikit-learn
 
+## Acknowledgments
+
+This project was developed to explore the application of deep learning in medical imaging, specifically for breast cancer detection. The dataset and preprocessing steps are crucial for the model's performance.
+
+---
+
+Feel free to modify the README file to fit any additional details specific to your project!
