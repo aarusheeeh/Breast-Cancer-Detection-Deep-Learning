@@ -1,5 +1,4 @@
 # Breast-Cancer-Detection-Deep-Learning
-## Breast Cancer Detection with Deep Learning
 
 This project utilizes deep learning to classify breast cancer images into benign or malignant categories.
 
