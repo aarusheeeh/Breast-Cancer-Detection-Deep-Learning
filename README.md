@@ -6,6 +6,7 @@ This project implements a deep learning model to classify breast cancer images a
 
 - [Installation](#installation)
 - [Usage](#usage)
+- [Dataset](#dataset)
 - [Model Architecture](#model-architecture)
 - [Training](#training)
 - [Testing](#testing)
@@ -28,8 +29,9 @@ This project implements a deep learning model to classify breast cancer images a
 
 ## Usage
 
-1. **Load Dataset:**
-   - Place the dataset images in the `./data/` folder.
+1. **Download the Dataset:**
+   - The dataset used for this project is available on Kaggle. You can download it [here](#dataset).
+   - After downloading, place the dataset images in the `./data/` folder.
    - The dataset should be organized into two subfolders: `benign/` and `malignant/`, with each subfolder containing the respective images.
 
 2. **Run the Script:**
@@ -46,6 +48,12 @@ This project implements a deep learning model to classify breast cancer images a
 
 5. **Visualization:**
    - The training and validation losses and accuracies can be visualized by clicking on the "See Loss and Accuracy plots" button.
+
+## Dataset
+
+The dataset used for this project is the **BreakHis 400x Breast Cancer Dataset**. It contains images categorized into two classes: benign and malignant. You can download the dataset from the following link:
+
+- [BreakHis 400x Breast Cancer Dataset on Kaggle](https://www.kaggle.com/datasets/scipygaurav/breakhis-400x-breast-cancer-dataset?resource=download)
 
 ## Model Architecture
 
