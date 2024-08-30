@@ -62,12 +62,3 @@ The script requires the following Python libraries:
 * opencv-python (cv2)
 * sklearn
 
-**Further Exploration:**
-
-* Experiment with different hyperparameters (e.g., number of epochs, learning rate) to improve model performance.
-* Try different CNN architectures to see if they achieve better results.
-* Explore techniques like data augmentation to increase the size and diversity of the training data.
-
-**Disclaimer:**
-
-This project is for educational purposes only and should not be used for medical diagnosis. This is a simplified implementation and may not achieve the same accuracy as real-world medical imaging systems.
